@@ -1,7 +1,7 @@
 # Row Level Security 検証
 
 ```sh
-$ docker-compose up
+$ docker-compose up -d
 $ bundle install
 $ bundle exec hanami db create
 $ bundle exec hanami db migrate
