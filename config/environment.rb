@@ -19,7 +19,7 @@ Hanami.configure do
     #    adapter :sql, 'mysql://localhost/bookshelf_development'
     #
     # adapter :sql, ENV.fetch('DATABASE_URL')
-    adapter :sql, 'postgres://postgres:password@localhost/bookshelf_development'
+    adapter :sql, 'postgres://rhizome:password@localhost/bookshelf_development'
 
     ##
     # Migrations

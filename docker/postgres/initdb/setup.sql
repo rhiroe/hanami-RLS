@@ -1,0 +1,1 @@
+CREATE USER rhizome WITH PASSWORD 'password' CREATEDB;

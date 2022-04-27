@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   db:
-    image: postgres:10.15-alpine
+    image: postgres:14.2-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -11,5 +11,6 @@ services:
       - "5432:5432"
     volumes:
       - pg-data:/var/lib/postgresql/data
+      - ./docker/postgres/initdb:/docker-entrypoint-initdb.d
 volumes:
   pg-data:

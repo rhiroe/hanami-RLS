@@ -14,14 +14,12 @@ Hanami::Model.migration do
       CREATE POLICY access_policy ON books
         FOR ALL
         TO PUBLIC
-        USING (tenant_id = current_setting('app.tenant_id')::integer)
-      ;
-      ALTER TABLE books ENABLE ROW LEVEL SECURITY
-      ;
+        USING (tenant_id = current_setting('app.tenant_id')::integer);
       INSERT INTO books VALUES
         (1, 'テナント1のBook', '太郎', 1, 'now', 'now'),
-        (2, 'テナント2のBook', '次郎', 2, 'now', 'now')
-      ;
+        (2, 'テナント2のBook', '次郎', 2, 'now', 'now');
+      ALTER TABLE books ENABLE ROW LEVEL SECURITY;
+      ALTER TABLE books FORCE ROW LEVEL SECURITY;
     SQL
   end
 end
